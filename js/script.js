@@ -6,6 +6,8 @@ const refs = {
 
 }
 
+// Создаем разметку 
+
 const createGalleryItemsMurkup = function (images) {
   return images
   .map(
