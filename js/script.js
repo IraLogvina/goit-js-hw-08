@@ -57,3 +57,11 @@ function closeModalImg() {
   refs.modalImg.alt = '';
 }
 
+
+function closeModalImgEsc (evt) {
+  if (evt.code === 'Escape') {
+    closeModalImg();
+  }
+
+}
+document.addEventListener('keydown', closeModalImgEsc);
