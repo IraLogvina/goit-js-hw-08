@@ -5,6 +5,7 @@ const refs = {
   closeModalBtn: document.querySelector('[data-action="close-lightbox"]'),
   modal: document.querySelector('.js-lightbox'),
   modalImg: document.querySelector('.lightbox__image'),
+  overlay: document.querySelector('.lightbox__overlay'),
 
 }
 
@@ -57,6 +58,7 @@ function closeModalImg() {
   refs.modalImg.alt = '';
 }
 
+// Закрытие по escape
 
 function closeModalImgEsc (evt) {
   if (evt.code === 'Escape') {
@@ -65,3 +67,12 @@ function closeModalImgEsc (evt) {
 
 }
 document.addEventListener('keydown', closeModalImgEsc);
+
+function closeModalImgOverlay (evt) {
+  if (evt.target.classList.contains('lightbox__overlay')) {
+    closeModalImg();
+  }
+
+}
+
+document.addEventListener('click', closeModalImgOverlay);
